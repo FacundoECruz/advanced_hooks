@@ -5,13 +5,13 @@ import * as React from 'react'
 
 function Counter({initialCount = 0, step = 1}) {
 
-  function countReducer(state, newState) {
-    return newState
+  function countReducer(count, step) {
+    return count + step
   }
 
   const [count, setCount] = React.useReducer(countReducer, initialCount)
 
-  const increment = () => setCount(count + step)
+  const increment = () => setCount(step)
   return <button onClick={increment}>{count}</button>
 }
 
